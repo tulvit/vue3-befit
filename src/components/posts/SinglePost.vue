@@ -1,5 +1,5 @@
 <script setup>
-  const props = defineProps(['post'])
+const props = defineProps(['post'])
 </script>
 
 <template>
@@ -15,7 +15,7 @@
   background: rgb(248, 241, 241);
   margin-bottom: 1rem;
   padding: 0.5rem;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 h3 {
   text-transform: capitalize;

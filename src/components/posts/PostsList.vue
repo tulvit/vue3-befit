@@ -1,4 +1,4 @@
-<script setup >
+<script setup>
 import SinglePost from './SinglePost.vue'
 
 const props = defineProps(['posts'])
@@ -8,7 +8,7 @@ console.table(props.posts)
   <div class="post-list">
     <h2>PostsList component</h2>
     <div v-for="post in props.posts" :key="post.id">
-     <SinglePost :post="post"/>
+      <SinglePost :post="post" />
     </div>
   </div>
 </template>

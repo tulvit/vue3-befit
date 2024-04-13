@@ -2,12 +2,11 @@
 import getPosts from './composables/getPosts'
 import PostsList from './components/posts/PostsList.vue'
 
-const { posts, error, load } = getPosts();
-load();
+const { posts, error, load } = getPosts()
+load()
 </script>
 
 <template>
-
   <header>
     <div class="wrapper">
       <h1>Records</h1>
@@ -16,14 +15,11 @@ load();
 
   <main>
     <div v-if="posts.length">
-      <PostsList :posts="posts"/>
+      <PostsList :posts="posts" />
     </div>
-    <div v-else>
-      Loading...
-    </div>
-    <div v-if="error">{{  error  }}</div>
+    <div v-else>Loading...</div>
+    <div v-if="error">{{ error }}</div>
   </main>
-
 </template>
 
 <style scoped>
