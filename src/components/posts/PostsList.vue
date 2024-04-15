@@ -6,7 +6,7 @@ const props = defineProps(['posts', 'page'])
 <template>
   <div class="post-list">
     <div
-      v-for="post in page ? props.posts.slice((page - 1) * 10, page * 10) : props.posts"
+      v-for="post in page ? props.posts.slice((page - 1) * 5, page * 5) : props.posts"
       :key="post.id"
     >
       <SinglePost :post="post" />

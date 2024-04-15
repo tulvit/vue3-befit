@@ -18,7 +18,7 @@ const dislikedPosts = computed(() => {
 load()
 
 const page = ref(1)
-const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 10))
+const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
 </script>
 
 <template class="container">
