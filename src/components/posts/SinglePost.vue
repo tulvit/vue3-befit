@@ -1,11 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import { useEvaluationStore } from '@/stores/evaluation'
 const postEvaluation = useEvaluationStore()
 const props = defineProps(['post'])
-const rate = function (id, value) {
+const rate = function (id: number, value: any) {
   postEvaluation.evaluate(id, value)
 }
-const remove = function (id) {
+const remove = function (id: number) {
   postEvaluation.remove(id)
 }
 const postEvaluated = postEvaluation.evaluatedPosts.has(props.post.id)

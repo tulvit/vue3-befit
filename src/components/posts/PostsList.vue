@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import SinglePost from './SinglePost.vue'
 
 const props = defineProps(['posts', 'page'])
