@@ -10,9 +10,7 @@ const getPosts = () => {
       if (!data.ok) {
         throw Error('no data available');
       }
-      //console.log('data json', data.json())
       posts.value = await data.json();
-      console.log('posts should be there', posts.value)
       if (!posts.value) {
         throw Error('error')
       }

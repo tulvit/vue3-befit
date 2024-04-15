@@ -2,7 +2,6 @@
 import SinglePost from './SinglePost.vue'
 
 const props = defineProps(['posts'])
-console.table(props.posts)
 </script>
 <template>
   <div class="post-list">
