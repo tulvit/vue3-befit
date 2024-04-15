@@ -5,7 +5,6 @@ const props = defineProps(['posts'])
 </script>
 <template>
   <div class="post-list">
-    <h2>PostsList component</h2>
     <div v-for="post in props.posts" :key="post.id">
       <SinglePost :post="post" />
     </div>
