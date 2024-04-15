@@ -6,14 +6,14 @@ const { posts, error, load } = getPosts()
 load()
 </script>
 
-<template>
+<template class="container">
   <header>
     <div class="wrapper">
-      <h1>Records</h1>
+      <h1 class="text-xl">Records</h1>
     </div>
   </header>
 
-  <main>
+  <main class="container">
     <div v-if="posts.length">
       <PostsList :posts="posts" />
     </div>
@@ -23,7 +23,7 @@ load()
 </template>
 
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
 }
 
@@ -38,5 +38,5 @@ header {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-}
+} */
 </style>
