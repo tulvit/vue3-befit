@@ -25,7 +25,7 @@ const page = ref(1)
 const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
 </script>
 
-<template>
+<template class="container">
   <header>
     <div class="wrapper">
       <h1 class="text-xl">Records</h1>
