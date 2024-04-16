@@ -1,32 +1,33 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import getPosts from './composables/getPosts'
-import PostsList from './components/posts/PostsList.vue'
-import { useEvaluationStore } from '@/stores/evaluation'
+// import { ref, computed } from 'vue'
+// import getPosts from './composables/getPosts'
+// import PostsList from './components/posts/PostsList.vue'
+// import { useEvaluationStore } from '@/stores/evaluation'
 
-interface post {
-  id: number
-  title: string
-}
-const { posts, error, load } = getPosts()
-const evaluatedPosts = useEvaluationStore()
-const notEvaluatedPosts = computed(() => {
-  return posts.value.filter((post: post) => !evaluatedPosts.evaluatedPosts.has(post.id))
-})
-const likedPosts = computed(() => {
-  return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === true)
-})
-const dislikedPosts = computed(() => {
-  return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === false)
-})
-load()
+// interface post {
+//   id: number
+//   title: string
+// }
+// const { posts, error, load } = getPosts()
+// const evaluatedPosts = useEvaluationStore()
+// const notEvaluatedPosts = computed(() => {
+//   return posts.value.filter((post: post) => !evaluatedPosts.evaluatedPosts.has(post.id))
+// })
+// const likedPosts = computed(() => {
+//   return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === true)
+// })
+// const dislikedPosts = computed(() => {
+//   return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === false)
+// })
+// load()
 
-const page = ref(1)
-const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
+// const page = ref(1)
+// const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
 </script>
 
 <template class="container">
-  <header>
+  <h1>Hello</h1>
+  <!-- <header>
     <div class="wrapper">
       <h1 class="text-xl">Records</h1>
     </div>
@@ -49,5 +50,5 @@ const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
     </div>
     <div v-else>Loading...</div>
     <div v-if="error">{{ error }}</div>
-  </main>
+  </main> -->
 </template>
