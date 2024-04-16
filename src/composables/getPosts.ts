@@ -6,7 +6,7 @@ const getPosts = () => {
 
   const load = async () => {
     try {
-      let data = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const data = await fetch('https://jsonplaceholder.typicode.com/posts')
       if (!data.ok) {
         throw Error('no data available')
       }

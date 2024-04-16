@@ -36,18 +36,18 @@ const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
     <div v-if="notEvaluatedPosts.length">
       <PostsList :posts="notEvaluatedPosts" :page="page" />
       <v-pagination :length="pages" v-model="page"></v-pagination>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="divide-y-8 divide-green-500">
+          <h1 class="text-lg">Liked</h1>
+          <PostsList :posts="likedPosts" />
+        </div>
+        <div class="divide-y-8 divide-red-500">
+          <h1 class="text-lg">Disliked</h1>
+          <PostsList :posts="dislikedPosts" />
+        </div>
+      </div>
     </div>
     <div v-else>Loading...</div>
     <div v-if="error">{{ error }}</div>
-    <div class="grid grid-cols-2 gap-4">
-      <div class="divide-y-8 divide-green-500">
-        <h1 class="text-lg">Liked</h1>
-        <PostsList :posts="likedPosts" />
-      </div>
-      <div class="divide-y-8 divide-red-500">
-        <h1 class="text-lg">Disliked</h1>
-        <PostsList :posts="dislikedPosts" />
-      </div>
-    </div>
   </main>
 </template>
