@@ -24,14 +24,8 @@ load()
 const page = ref(1)
 const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
 </script>
-<template>
-  <header>
-    <div class="wrapper">
-      <div class="text-xl">Records</div>
-    </div>
-  </header>
-</template>
-<!-- <template class="container">
+
+<template class="container">
   <header>
     <div class="wrapper">
       <h1 class="text-xl">Records</h1>
@@ -56,4 +50,4 @@ const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
     <div v-else>Loading...</div>
     <div v-if="error">{{ error }}</div>
   </main>
-</template> -->
+</template>
