@@ -2,7 +2,7 @@
 import { useEvaluationStore } from '@/stores/evaluation'
 const postEvaluation = useEvaluationStore()
 const props = defineProps(['post'])
-const rate = function (id: number, value: any) {
+const rate = function (id: number, value: boolean) {
   postEvaluation.evaluate(id, value)
 }
 const remove = function (id: number) {

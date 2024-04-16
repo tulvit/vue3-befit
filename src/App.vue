@@ -4,16 +4,20 @@ import getPosts from './composables/getPosts'
 import PostsList from './components/posts/PostsList.vue'
 import { useEvaluationStore } from '@/stores/evaluation'
 
+interface post {
+  id: number
+  title: string
+}
 const { posts, error, load } = getPosts()
 const evaluatedPosts = useEvaluationStore()
 const notEvaluatedPosts = computed(() => {
-  return posts.value.filter((post: any) => !evaluatedPosts.evaluatedPosts.has(post.id))
+  return posts.value.filter((post: post) => !evaluatedPosts.evaluatedPosts.has(post.id))
 })
 const likedPosts = computed(() => {
-  return posts.value.filter((post: any) => evaluatedPosts.evaluatedPosts.get(post.id) === true)
+  return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === true)
 })
 const dislikedPosts = computed(() => {
-  return posts.value.filter((post: any) => evaluatedPosts.evaluatedPosts.get(post.id) === false)
+  return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === false)
 })
 load()
 
