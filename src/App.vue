@@ -27,7 +27,7 @@ const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
 <template>
   <header>
     <div class="wrapper">
-      <h1 class="text-xl">Records</h1>
+      <div class="text-xl">Records</div>
     </div>
   </header>
 </template>
