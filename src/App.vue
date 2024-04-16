@@ -1,23 +1,23 @@
-<script setup lang="ts">
+<script setup>
 import { ref, computed } from 'vue'
 import getPosts from './composables/getPosts'
 import PostsList from './components/posts/PostsList.vue'
 import { useEvaluationStore } from '@/stores/evaluation'
 
-interface post {
-  id: number
-  title: string
-}
+// interface post {
+//   id: number
+//   title: string
+// }
 const { posts, error, load } = getPosts()
 const evaluatedPosts = useEvaluationStore()
 const notEvaluatedPosts = computed(() => {
-  return posts.value.filter((post: post) => !evaluatedPosts.evaluatedPosts.has(post.id))
+  return posts.value.filter((post) => !evaluatedPosts.evaluatedPosts.has(post.id))
 })
 const likedPosts = computed(() => {
-  return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === true)
+  return posts.value.filter((post) => evaluatedPosts.evaluatedPosts.get(post.id) === true)
 })
 const dislikedPosts = computed(() => {
-  return posts.value.filter((post: post) => evaluatedPosts.evaluatedPosts.get(post.id) === false)
+  return posts.value.filter((post) => evaluatedPosts.evaluatedPosts.get(post.id) === false)
 })
 load()
 
@@ -26,11 +26,11 @@ const pages = computed(() => Math.ceil(notEvaluatedPosts.value.length / 5))
 </script>
 
 <template class="container">
-  <!-- <header>
+  <header>
     <div class="wrapper">
       <h1 class="text-xl">Records</h1>
     </div>
-  </header> -->
+  </header>
 
   <main class="container">
     <div v-if="notEvaluatedPosts.length">
